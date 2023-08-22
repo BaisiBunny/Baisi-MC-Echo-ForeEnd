@@ -5,8 +5,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <RouterLink to="/">主页</RouterLink>&nbsp;&nbsp;
-    <RouterLink to="/about">商店</RouterLink>
+    <RouterLink to="/">主页</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
+    <RouterLink to="/about">商店</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
+    <RouterLink to="/login">登录</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
+    <RouterLink to="/register">注册</RouterLink>
     <span class="top_Right">dd</span>
   </header>
 
