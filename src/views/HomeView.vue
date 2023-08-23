@@ -3,7 +3,7 @@
 
 <template>
   <div class="total">
-    <p class="theTitle"><br>欢迎来到 BaisiMC !</p>
+    <p class="theTitle"><br>欢迎来到 <span class="mc_font">BaisiMC</span> !</p>
   </div>
 </template>
 
@@ -18,5 +18,14 @@
     margin: 0;
     text-align: center;
     color: white;
+  }
+
+  @font-face {
+    font-family: 'McFontRegular';
+    src: url('../assets/minecraft_font_regular.otf');
+  }
+  .mc_font{
+    font-family: 'McFontRegular',Arial, Helvetica, sans-serif;
+    
   }
 </style>
