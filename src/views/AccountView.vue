@@ -1,6 +1,6 @@
 <template>
     <div class="total">
-        <h1 style="margin-top: 0;"><br>注册BaisiMC账号</h1>
+        <h1 style="margin-top: 0;"><br>注册/登录BaisiMC账号</h1>
         <h3>你的游戏ID</h3>
         <p>长度: 2~20 &nbsp; 仅可包含: 
             <span class="blue">A</span>~<span class="blue">Z</span>,<span class="blue">a</span>~<span class="blue">z</span>,<span class="blue">0</span>~<span class="blue">9</span>,<span class="blue">_</span>
@@ -14,9 +14,9 @@
         <p>稍后将生成你的专属IP地址用于登录游戏。</p>
         <!-- <el-button type="primary">注册</el-button> -->
         <RegButton :account="input_name" :password="input_password"/>
+        <LoginButton :account="input_name" :password="input_password"/>
         <p><br></p>
     </div>
-    
 </template>
 
 <script setup>
@@ -25,13 +25,13 @@
     const input_password = ref('')
 
     import RegButton from '../components/RegButton.vue'
+    import LoginButton from '../components/LoginButton.vue'
 </script>
 
 <style scoped>
     .total{
         width: 40%;
         margin: 0 auto;
-        height: 100%;
         overflow: scroll;
     }
     .blue{

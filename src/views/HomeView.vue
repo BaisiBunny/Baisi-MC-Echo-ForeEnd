@@ -1,9 +1,19 @@
-<script>
+<script setup>
+import { inject } from 'vue'
+import { onMounted } from 'vue'
+
+const { name,money,gameKey,getData } = inject('userData')
+
+onMounted(() => {
+  getData()
+})
+
 </script>
 
 <template>
   <div class="total">
     <p class="theTitle"><br>欢迎来到 <span class="mc_font">BaisiMC</span> !</p>
+    <p class="theTitle mc_font">{{ name }}</p>
   </div>
 </template>
 
@@ -26,6 +36,5 @@
   }
   .mc_font{
     font-family: 'McFontRegular',Arial, Helvetica, sans-serif;
-    
   }
 </style>
