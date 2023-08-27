@@ -13,11 +13,12 @@ const currentInstance = getCurrentInstance();
 const { $axios } = currentInstance.appContext.config.globalProperties;
 
 function getData(){
-  const token = Cookies.get("token")
+  const token = ref("")
+  token.value = Cookies.get("token")
   // console.log(token)
 
   $axios.post('/get_data', {
-      token: token
+      token: token.value
   })
   .then(function (response) {
       const resp = response.data
@@ -48,7 +49,8 @@ provide('userData',{
   <header>
     <RouterLink to="/">主页</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
     <RouterLink to="/shop">商店</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
-    <RouterLink to="/account">注册/登录</RouterLink>
+    <RouterLink to="/account">注册/登录</RouterLink>&nbsp;&nbsp;&nbsp;&nbsp;
+    <RouterLink to="/address">服务器IP</RouterLink>
     
     <span class="top_Right">玩家: {{ name }}&nbsp;&nbsp;&nbsp;&nbsp;硬币: {{ money }}</span>
     

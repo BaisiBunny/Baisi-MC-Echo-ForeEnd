@@ -33,6 +33,7 @@ onMounted(() => {
   @font-face {
     font-family: 'McFontRegular';
     src: url('../assets/minecraft_font_regular.otf');
+    font-display: auto;
   }
   .mc_font{
     font-family: 'McFontRegular',Arial, Helvetica, sans-serif;
