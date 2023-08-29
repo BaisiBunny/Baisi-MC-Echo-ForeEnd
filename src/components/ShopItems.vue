@@ -35,10 +35,10 @@ async function buy(id){
         // console.log(response)
         const resp = response.data
         if(String(resp).includes("token_error")){
-            ElMessage.error('令牌错误')
+            ElMessage.error('请先登录')
         }
         if(String(resp).includes("not_enough_money")){
-            ElMessage.error('没有米了')
+            ElMessage.error('硬币好像不是很够')
         }
         if(String(resp).includes("success")){
             ElMessage.success('已在游戏内发货')
@@ -93,6 +93,7 @@ async function buy(id){
         /* background-color: #7fffd4; */
         border-radius: 1.5rem;
         transition: .4s;
+        /* image-rendering: pixelated; */
     }
     .item:hover{
         background-color: #efefef;

@@ -5,7 +5,7 @@
             <el-button @click="search">搜索&nbsp;&nbsp;<el-icon><Search /></el-icon></el-button>
         </template>
       </el-input>
-      <p style="margin-top: 0.8rem; margin-bottom: -0.2rem;">购买时请确保<span class="important">玩家游戏内在线</span>，点击图标即可购买。</p>
+      <p style="margin-top: 0.8rem; margin-bottom: -0.2rem;">购买时请确保<span class="important">玩家在游戏内在线</span>，点击图标即可购买。</p>
     </div>
 </template>
   
