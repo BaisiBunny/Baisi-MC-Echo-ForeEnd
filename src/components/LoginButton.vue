@@ -26,7 +26,11 @@ const register = () => {
     })
     .then(function (response) {
         const resp = response.data
+
+
         // console.log(resp)
+
+
         if(String(resp).includes("token")){
             // console.log(resp.substr(6,32))
             Cookies.set("token",resp.substr(6,32),40000000)

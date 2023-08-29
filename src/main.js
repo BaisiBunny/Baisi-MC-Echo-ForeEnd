@@ -14,7 +14,7 @@ const app = createApp(App)
 app.use(router)
 app.use(ElementPlus)
 
-axios.defaults.baseURL="http://backend.mc.baisi.tech:11740"
+axios.defaults.baseURL="https://backend.mc.baisi.tech"
 app.config.globalProperties.$axios = axios
 
 // app.config.globalProperties.$cookies = VueCookies

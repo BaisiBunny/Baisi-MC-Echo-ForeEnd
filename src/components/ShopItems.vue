@@ -2,7 +2,7 @@
     <div class="container">
         <!-- <button @click="bgetItems">bt</button> -->
         <div class="item" v-for="item in itemsContent.items" v-show="!itemsContent.isEmpty" @click="buy(item.id)">
-            <img :src="'src/assets/items/'+item.picture" class="pic">
+            <img :src="'/items/'+item.picture" class="pic">
             <p class="itemText">{{item.name}}<span class="gray">×</span>{{ item.amount }}</p>
             <p class="itemText">{{ item.price }} 硬币</p>
         </div>
