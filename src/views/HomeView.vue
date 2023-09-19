@@ -13,7 +13,8 @@ onMounted(() => {
 
 <template>
   <div class="total">
-    <p class="theTitle"><br>欢迎来到 <span class="mc_font">BaisiMC</span> !</p>
+    <p class="theTitle subtitle"><br><br>有问题/聊天 请加QQ群：864206168（无需审核）<br><br></p>
+    <p class="theTitle">欢迎来到 <span class="mc_font">BaisiMC</span> !</p>
     <p class="theTitle mc_font">{{ name }}</p>
     <Tutorial />
   </div>
@@ -30,6 +31,10 @@ onMounted(() => {
     margin: 0;
     text-align: center;
     color: white;
+  }
+
+  .subtitle{
+    font-size: 1.5rem;
   }
 
   @font-face {

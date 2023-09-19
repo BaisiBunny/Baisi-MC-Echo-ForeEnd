@@ -1,5 +1,5 @@
 <template>
-    <el-button type="primary" @click="register" >{{ buttonIndex }}</el-button>
+    <el-button type="primary" @click="register" :disabled="!readed">{{ buttonIndex }}</el-button>
 </template>
 
 <script setup>
@@ -8,7 +8,7 @@ import { getCurrentInstance, ref } from 'vue'
 import Cookies from 'vue-cookies'
 import { useRouter } from 'vue-router'
 
-const props = defineProps(['account','password'])
+const props = defineProps(['account','password','readed'])
 
 const buttonIndex = ref("注册")
 

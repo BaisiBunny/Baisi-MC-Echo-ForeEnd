@@ -1,8 +1,9 @@
 <template>
     <div class="container">
         <!-- <button @click="bgetItems">bt</button> -->
+        <p style="font-size: 3rem; margin-top: 1rem; color: #f55fa7;" v-show="waiting">商品正在加载中...</p>
         <div class="item" v-for="item in itemsContent.items" v-show="!itemsContent.isEmpty" @click="buy(item.id)">
-            <img :src="'/items/'+item.picture" class="pic">
+            <img :src="'https://main.download.baisi.tech/minecraft/'+item.picture" class="pic">
             <p class="itemText">{{item.name}}<span class="gray">×</span>{{ item.amount }}</p>
             <p class="itemText">{{ item.price }} 硬币</p>
         </div>
@@ -18,7 +19,7 @@ import { getCurrentInstance } from 'vue'
 import Cookies from 'vue-cookies'
 import { ElMessage } from 'element-plus'
 
-const {itemsContent,getItems} = inject('items')
+const {itemsContent,waiting,getItems} = inject('items')
 const {name,money,gameKey,getData} = inject('userData')
 
 const currentInstance = getCurrentInstance();

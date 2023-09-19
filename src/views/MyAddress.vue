@@ -1,10 +1,11 @@
 <template>
   <div class="total">
     <p style="margin-top: 0;"><br><br></p>
-    <p class="title">你的专属服务器地址</p>
-    <p class="title mc_font" v-if="!gameKey.includes('xxxx')">{{ gameKey }}.mc.baisi.tech</p>
+    <p class="title">你的专属服务器地址：<br>任选其一，延迟过高请更换其他线路。</p>
+    <p class="title mc_font" v-if="!gameKey.includes('xxxx')">{{ gameKey }}.mc.line1.baisi.tech:35963</p>
+    <p class="title mc_font" v-if="!gameKey.includes('xxxx')">{{ gameKey }}.mc.line2.baisi.tech:11080</p>
     <p class="title mc_font" v-else>请先 注册/登录</p>
-    <p class="subtitle"><br><br><br>⬆︎ 请勿泄漏此IP，更改密码将刷新此IP</p>
+    <p class="subtitle"><br><br>⬆ 请勿泄漏此IP，修改密码将刷新此IP<br>服务器未开启正版验证，此IP作为验证玩家身份的唯一凭证。</p>
   </div>
 </template>
 

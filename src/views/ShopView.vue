@@ -42,6 +42,7 @@ const currentPage = ref(1)
 const totalAmount = ref(1)
 
 const itemsContent = ref({})
+const waiting = ref(true)
 
 async function getItems(){
 await $axios.post('/get_items', {
@@ -60,6 +61,7 @@ await $axios.post('/get_items', {
 .catch(function (error) {
     console.log(error);
 });
+waiting.value = false
 }
 
 function search(){
@@ -71,7 +73,7 @@ provide('search',{search_content,search_sort,search})
 
 provide('pagination',{pageSize,currentPage,totalAmount})
 
-provide('items',{itemsContent,getItems})
+provide('items',{itemsContent,waiting,getItems})
 
 onMounted(()=>{
 getItems()

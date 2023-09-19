@@ -1,5 +1,5 @@
 <template>
-    <el-button type="success" @click="register" >{{ buttonIndex }}</el-button>
+    <el-button type="success" @click="register" :disabled="!readed">{{ buttonIndex }}</el-button>
 </template>
 
 <script setup>
@@ -8,7 +8,7 @@ import { getCurrentInstance, ref } from 'vue'
 import Cookies from 'vue-cookies'
 import { useRouter } from 'vue-router'
 
-const props = defineProps(['account','password'])
+const props = defineProps(['account','password','readed'])
 
 const buttonIndex = ref("登录")
 
@@ -17,10 +17,10 @@ const router = useRouter()
 const currentInstance = getCurrentInstance();
 const { $axios } = currentInstance.appContext.config.globalProperties;
 
-const register = () => {
+const register = async () => {
     buttonIndex.value = "正在登录，请稍等。"
 
-    $axios.post('/login', {
+    await $axios.post('/login', {
         name: props.account,
         password: props.password,
     })

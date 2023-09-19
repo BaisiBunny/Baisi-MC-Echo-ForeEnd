@@ -1,5 +1,5 @@
 <template>
-    <el-button type="warning" @click="register" >{{ buttonIndex }}</el-button>
+    <el-button type="warning" @click="register" :disabled="!readed">{{ buttonIndex }}</el-button>
 </template>
 
 <script setup>
@@ -9,7 +9,7 @@ import Cookies from 'vue-cookies'
 import { useRouter } from 'vue-router'
 import { inject } from 'vue'
 
-const props = defineProps(['account','password'])
+const props = defineProps(['account','password','readed'])
 
 const buttonIndex = ref("修改密码")
 
@@ -20,14 +20,14 @@ const { $axios } = currentInstance.appContext.config.globalProperties;
 
 const {name,money,gameKey,getData} = inject('userData')
 
-const register = () => {
+const register = async () => {
     buttonIndex.value = "正在修改密码，请稍等。"
 
     const token = ref("")
     token.value = Cookies.get('token')
     // console.log(token)
 
-    $axios.post('/change_password', {
+    await $axios.post('/change_password', {
         name: props.account,
         newPassword: props.password,
         token: token.value
